@@ -1,0 +1,49 @@
+@startuml
+
+Class Toy {
+-int id
+-String name
+-int frequency
++<<create>> Toy(int id, String name, int frequency)
++getId()
++getName()
++getFrequency()
++setFrequency(int frequency)
++toString()
+}
+
+Class ShopToys {
+-ArrayList<Toy> shopToys
++void add()
++getToys()
++toString()
++put(String filePath)
+}
+
+Class ToysLottery {
+-Queue<Toy> toysQueue
++<<create>> ToysLottery(ShopToys shopToys)
++size()
++poll()
+}
+
+Class Draw {
+-ArrayList<String> winningToys
++void draw(int count, ToysLottery toysLottery)
++toString()
++void writeToys(String filePath)
+}
+
+Class Main {
++{static} void main()
+}
+
+ShopToys o-[bold]- Toy
+ToysLottery -[#red,dashed,thickness=3]-> ShopToys
+ToysLottery -[#blue,dashed,thickness=2]-  Draw
+Main -[#red,dashed,thickness=3]-> ShopToys
+Main -[#red,dashed,thickness=3]-> Draw
+Main -[#red,dashed,thickness=3]-> ToysLottery
+
+
+@enduml
