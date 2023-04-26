@@ -13,8 +13,12 @@ public class ShopToys {
     }
 
 
-    public void changeFrequency(int index, int frequency) {
-        toys.get(index).setFrequency(frequency);
+    public void changeFrequency(int id, int frequency) {
+        for (Toy toy: toys) {
+            if (toy.getId() == id){
+                toy.setFrequency(frequency);
+            }
+        }
     }
 
     @Override

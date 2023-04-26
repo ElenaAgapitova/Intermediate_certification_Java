@@ -4,7 +4,7 @@ public class Main {
         ShopToys shopToys = new ShopToys(); // создание 'магазина игрушек'
         shopToys.put("prizes"); // заполнение списка игрушек из файла prizes
         shopToys.add(4, "брелок", 6); // метод добавления игрушки
-        shopToys.changeFrequency(3,60); // метод  изменения частоты выпадения игрушки
+        shopToys.changeFrequency(4,60); // метод  изменения частоты выпадения игрушки по id
         System.out.println(shopToys);
 
         // создание призового фонда (рандомная очередь игрушек в соответсвии с частотой выпадания)
