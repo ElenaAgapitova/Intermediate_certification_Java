@@ -2,7 +2,7 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws IOException {
         ShopToys shopToys = new ShopToys(); // создание 'магазина игрушек'
-        shopToys.put("prizes"); // заполнение списка игрушек из файла toys
+        shopToys.put("prizes"); // заполнение списка игрушек из файла prizes
         shopToys.add(4, "брелок", 6); // метод добавления игрушки
         shopToys.changeFrequency(3,60); // метод  изменения частоты выпадения игрушки
         System.out.println(shopToys);

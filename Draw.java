@@ -7,11 +7,10 @@ public class Draw {
     private final ArrayList<String> winningToys = new ArrayList<>();
 
     public void draw(int count, ToysLottery toysLottery) {
-        for (int i = 1; i <= count; i++) {
-            if (toysLottery.size() > 0) {
-                Toy currentToy = toysLottery.poll();
-                winningToys.add(currentToy.getName());
-            }
+        int numberToys = toysLottery.size();
+        for (int i = 1; i <= Math.min(count, numberToys); i++) {
+            Toy currentToy = toysLottery.poll();
+            winningToys.add(currentToy.getName());
         }
     }
 
